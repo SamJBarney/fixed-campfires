@@ -2,7 +2,7 @@
 	"schemaVersion": 1,
 	"id": "fixed-campfires",
 	"version": "${version}",
-	"name": "Campfires Respect The Recipe Book",
+	"name": "Campfires Respect the Recipe Book",
 	"description": "Makes campfires respect the doLimitedCrafting game rule",
 	"authors": [
 		"Crioch"
@@ -15,9 +15,6 @@
 	"icon": "assets/fixed-campfires/icon.png",
 	"environment": "*",
 	"entrypoints": {
-		"main": [
-			"com.crioch.FixedCampfiresMod"
-		]
 	},
 	"mixins": [
 		"blocks.mixins.json",
