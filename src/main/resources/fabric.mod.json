@@ -1,41 +1,34 @@
 {
 	"schemaVersion": 1,
-	"id": "modid",
+	"id": "fixed-campfires",
 	"version": "${version}",
-	"name": "Example mod",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"name": "Campfires Respect The Recipe Book",
+	"description": "Makes campfires respect the doLimitedCrafting game rule",
 	"authors": [
-		"Me!"
+		"Crioch"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://modrinth.com/mod/campfires-respect-the-recipe-book",
+		"sources": "https://github.com/SamJBarney/fixed-campfires"
 	},
-	"license": "CC0-1.0",
-	"icon": "assets/modid/icon.png",
+	"license": "MIT",
+	"icon": "assets/fixed-campfires/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"com.example.ExampleMod"
-		],
-		"client": [
-			"com.example.ExampleModClient"
+			"com.crioch.FixedCampfiresMod"
 		]
 	},
 	"mixins": [
-		"modid.mixins.json",
-		{
-			"config": "modid.client.mixins.json",
-			"environment": "client"
-		}
+		"blocks.mixins.json",
+		"block_entities.mixins.json",
+		"items.mixins.json"
 	],
 	"depends": {
 		"fabricloader": ">=0.14.22",
-		"minecraft": "~1.20.2",
+		"minecraft": "~1.20.1",
 		"java": ">=17",
 		"fabric-api": "*"
 	},
-	"suggests": {
-		"another-mod": "*"
-	}
+	"suggests": {}
 }

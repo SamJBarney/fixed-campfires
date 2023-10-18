@@ -1,0 +1,12 @@
+{
+	"required": true,
+	"package": "com.crioch.mixin.block",
+	"compatibilityLevel": "JAVA_17",
+	"mixins": [
+		"CampfireBlockMixin",
+        "DispenserBehaviorMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}
