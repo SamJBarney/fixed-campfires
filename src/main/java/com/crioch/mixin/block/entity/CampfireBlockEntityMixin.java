@@ -17,6 +17,7 @@ import java.util.Optional;
 import org.jetbrains.annotations.Nullable;
 import net.minecraft.item.ItemStack;
 import net.minecraft.recipe.CampfireCookingRecipe;
+import net.minecraft.recipe.RecipeEntry;
 import net.minecraft.recipe.RecipeManager;
 
 import org.spongepowered.asm.mixin.Mixin;
@@ -43,7 +44,7 @@ public class CampfireBlockEntityMixin extends BlockEntity {
 		}
 		if (user != null) {
 			ServerPlayerEntity player = (ServerPlayerEntity)user;
-			Optional<CampfireCookingRecipe> recipe = this.matchGetter.getFirstMatch(new SimpleInventory(stack), world);
+			Optional<RecipeEntry<CampfireCookingRecipe>> recipe = this.matchGetter.getFirstMatch(new SimpleInventory(stack), world);
 			if (!recipe.isPresent() || !player.getRecipeBook().contains(recipe.get())) {
 				info.setReturnValue(false);
 			}

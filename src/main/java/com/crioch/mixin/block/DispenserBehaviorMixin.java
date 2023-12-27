@@ -35,10 +35,10 @@ public class DispenserBehaviorMixin {
 
             @Override
             protected ItemStack dispenseSilently(BlockPointer pointer, ItemStack stack) {
-                ServerWorld world = pointer.getWorld();
+                ServerWorld world = pointer.world();
                 this.setSuccess(true);
-                Direction direction = pointer.getBlockState().get(DispenserBlock.FACING);
-                BlockPos blockPos = pointer.getPos().offset(direction);
+                Direction direction = pointer.state().get(DispenserBlock.FACING);
+                BlockPos blockPos = pointer.pos().offset(direction);
                 BlockState blockState = world.getBlockState(blockPos);
                 if (AbstractFireBlock.canPlaceAt(world, blockPos, direction)) {
                     world.setBlockState(blockPos, AbstractFireBlock.getState(world, blockPos));
